@@ -69,8 +69,14 @@ header
 .header svg:hover,
 .alert-banner:hover{
     cursor: pointer;
+    transition: ease-in-out;
 }
 
+.bell-wrap svg:hover{
+    fill: green;
+    transform: rotate( 25deg );
+    
+}
 
 /* 
 Navigation 
@@ -303,6 +309,7 @@ Main
         text-transform: uppercase;
     }
 
+    /* member blocks */
     .person {
         display: flex;
         flex-direction: column;
@@ -318,9 +325,11 @@ Main
         width: 61px;
         border-radius: 50%;
     }
+    .name{
+        text-align: center;
+    }
 
-    .person p,
-    .ml {
+    .members-text p{
         font-size: .65em;
         padding: 0;
         margin: 0;
@@ -566,7 +575,7 @@ Main
     /* members and activity */
 
 
-    .members .person{
+    .person{
         flex-direction: row;
         justify-content: start;
         justify-content: end;
@@ -574,23 +583,46 @@ Main
     .person img{
         margin-right: 10px;
     }
-    .name{
-        
+    .members-text{
+        flex-grow: 4;
         }
-    .person .ml {        
-        position: absolute;
-        left: 135px;        
+    .name{
+        text-align: left;
     }
-    .date{
-        position:absolute;
-        right: 5px;
-        
-    }
+    
 
     /* activity */
-    
+
 
     .arrow{
         display: contents;
+        margin-right: 10px;
+        flex-grow: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .members,
+    .message {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .activity,
+    .settings{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .settings{
+        padding: 0 10px 10px;
+    }
+    .tmz{
+        flex-grow: 2;
+        margin-bottom: 0;
+    }
+    .settings-button{
+        padding-bottom: 5px;
+        /* margin-bottom: 5px; */
     }
 }
